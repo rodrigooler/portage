@@ -1,5 +1,23 @@
 # Usage
 
+## Install skill
+
+```bash
+# Claude + Grok + Codex (global)
+npx skills add rodrigooler/portage -g -a claude-code -a grok -a codex -s portage -y
+
+# Claude only
+npx skills add rodrigooler/portage -g -a claude-code -s portage -y
+
+# Grok only
+npx skills add rodrigooler/portage -g -a grok -s portage -y
+
+# Codex only
+npx skills add rodrigooler/portage -g -a codex -s portage -y
+```
+
+Listing on [skills.sh](https://skills.sh/rodrigooler/portage). Agent ids match the Vercel skills CLI (`claude-code`, `grok`, `codex`).
+
 ## Typical flow
 
 1. Decide old path and new path (absolute paths are best).

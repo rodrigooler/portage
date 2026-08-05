@@ -1,6 +1,70 @@
 # Portage
 
+[![skills.sh](https://skills.sh/b/rodrigooler/portage)](https://skills.sh/rodrigooler/portage)
+
 When you rename or move a project folder, coding agents keep pointing at the old path. Session history, trust lists, and local indexes do not follow the `mv`. Portage finds those bindings and rehomes them.
+
+Directory listing: [skills.sh/rodrigooler/portage](https://skills.sh/rodrigooler/portage)
+
+## Install (recommended)
+
+Uses the [Vercel skills CLI](https://skills.sh) (`npx skills`). Global install (`-g`) puts the skill in your user agent dirs so every project can call `/portage`.
+
+### Claude + Grok + Codex in one shot
+
+```bash
+npx skills add rodrigooler/portage \
+  -g \
+  -a claude-code -a grok -a codex \
+  -s portage \
+  -y
+```
+
+### One agent at a time
+
+```bash
+# Claude Code -> ~/.claude/skills/portage
+npx skills add rodrigooler/portage -g -a claude-code -s portage -y
+
+# Grok Build -> ~/.grok/skills/portage
+npx skills add rodrigooler/portage -g -a grok -s portage -y
+
+# Codex -> ~/.codex/skills/portage
+npx skills add rodrigooler/portage -g -a codex -s portage -y
+```
+
+### Project-local (commit with the repo)
+
+Omit `-g` so files land under the project (`.claude/skills`, `.grok/skills`, `.codex`/agents skills layout as the CLI chooses):
+
+```bash
+npx skills add rodrigooler/portage -a claude-code -a grok -a codex -s portage -y
+```
+
+### After install
+
+In the agent:
+
+```text
+/portage
+```
+
+Or: `rehome ~/www/uova to ~/www/zk-project, dry-run first`.
+
+Update later:
+
+```bash
+npx skills update portage -g -y
+```
+
+### Manual symlink (no npx)
+
+```bash
+git clone https://github.com/rodrigooler/portage.git
+ln -sfn "$(pwd)/portage" ~/.claude/skills/portage
+ln -sfn "$(pwd)/portage" ~/.grok/skills/portage
+ln -sfn "$(pwd)/portage" ~/.codex/skills/portage
+```
 
 ## The problem
 
@@ -16,24 +80,6 @@ The skill is the orchestrator. The scripts are the mechanical bits you can also 
 ## Name
 
 A portage is carrying a canoe between two rivers. Same boat, different water. Same sessions and trust, different folder path.
-
-## Install
-
-Symlink this repo into each agent skills directory you use:
-
-```bash
-ln -sfn /path/to/portage ~/.claude/skills/portage
-ln -sfn /path/to/portage ~/.grok/skills/portage
-ln -sfn /path/to/portage ~/.codex/skills/portage
-```
-
-Then in the agent:
-
-```text
-/portage
-```
-
-Or say something like: "rehome ~/www/uova to ~/www/zk-project, dry-run first".
 
 ## CLI
 
