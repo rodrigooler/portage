@@ -1,0 +1,8 @@
+.DS_Store
+*.bak
+*.bak.*
+.idea/
+.vscode/
+*.swp
+.claude/
+.grok/
