@@ -31,16 +31,29 @@ if [[ ${#ARGS[@]} -lt 2 ]]; then
   exit 2
 fi
 
-OLD="${ARGS[0]/#\~/$HOME}"
-NEW="${ARGS[1]/#\~/$HOME}"
+OLD="${ARGS[0]}"
+NEW="${ARGS[1]}"
 STORES="${PORTAGE_STORES:-claude,codex,grok}"
 
-abs() {
-  python3 -c 'import os,sys; print(os.path.abspath(os.path.expanduser(sys.argv[1])))' "$1"
+# Path data only: reject shell/control metacharacters before any use.
+validate_path() {
+  python3 - "$1" <<'PY'
+import os, re, sys
+raw = sys.argv[1]
+if not raw or any(c in raw for c in "\n\r\0`$;&|<>(){}[]*?!\\"):
+    print("invalid path (empty or metacharacters)", file=sys.stderr)
+    sys.exit(2)
+expanded = os.path.expanduser(raw)
+abs_path = os.path.abspath(expanded)
+if not re.fullmatch(r"/[A-Za-z0-9._/\- ]*", abs_path):
+    print(f"invalid path characters: {abs_path!r}", file=sys.stderr)
+    sys.exit(2)
+print(abs_path)
+PY
 }
 
-OLD="$(abs "$OLD")"
-NEW="$(abs "$NEW")"
+OLD="$(validate_path "$OLD")"
+NEW="$(validate_path "$NEW")"
 
 if [[ "$OLD" == "$NEW" ]]; then
   echo "old and new paths are identical" >&2

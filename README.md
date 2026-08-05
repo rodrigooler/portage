@@ -118,10 +118,7 @@ Apply covers Claude, Codex, and Grok state on disk. Vault note rewrites, CBM rei
 | Orca / worktrees | Workspace pointers (skill) |
 | Other tools | `references/adapters/generic.md` describes how to add them |
 
-Community scripts that only touch Claude and/or Codex can still help as accelerators. Portage still owns the multi-agent path, vault, and report:
-
-- [claude-mv](https://github.com/curiouslychase/dotfiles/blob/main/scripts/claude-mv)
-- [migrate-project](https://harnez.ai/posts/fix-broken-project-paths/)
+For Claude and Codex alone, other write-ups exist online. Prefer the scripts in this repository (`scripts/portage-discover.sh`, `scripts/portage-apply.sh`) so you are not downloading third-party executables into the agent context.
 
 ## Safety
 

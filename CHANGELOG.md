@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2
+
+- Remove third-party executable script links from skill and docs (Snyk E005)
+- Treat user-supplied paths as data only with validation in skill and CLI (Snyk W011)
+- Add `references/security.md`
+
 ## 0.1.1
 
 - Document `npx skills add` install for Claude Code, Grok, and Codex

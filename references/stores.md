@@ -36,11 +36,6 @@ store=<id> kind=live|ghost|content encoding=<raw|slash-dash|url> from=<path-or-e
 Slash-dash decode is **lossy** when path segments contain `-`. Prefer an
 authoritative map (`.claude.json` project keys) over naive reverse substitution.
 
-## Community scripts (optional)
+## Optional external tools
 
-When available on PATH, use as discover/apply helpers, then still verify with adapters:
-
-- `migrate-project`: Claude + Codex multi-store ([write-up](https://harnez.ai/posts/fix-broken-project-paths/))
-- `claude-mv`: Claude-only move + session rewrite ([script](https://github.com/curiouslychase/dotfiles/blob/main/scripts/claude-mv))
-
-Portage still owns intake, vault, Grok, CBM, and the report when those scripts run.
+If another CLI that rehomes Claude or Codex state is already installed and on PATH, you may use it as an accelerator after the Portage manifest is approved. Still verify with the adapters in this skill. Prefer the scripts shipped in this repository over fetching any remote executable.

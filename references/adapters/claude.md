@@ -31,8 +31,8 @@ Encoding: `/` and `.` become `-` (leading `-`). Authoritative reverse map: keys 
 6. Patch `history.jsonl` path fields.
 
 `scripts/portage-apply.sh` covers steps 1-3 and 5 for the common case.
-If `claude-mv` is on PATH and `scope` includes moving the folder, it may also
-rewrite sessions and move the project tree. Verify afterward either way.
+If `scope` includes moving the project folder, perform that `mv` only after
+bindings are rehomed (or as the adapter order requires). Verify afterward.
 
 ## Verify
 

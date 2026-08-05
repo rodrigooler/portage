@@ -1,6 +1,7 @@
 # Safety (agent)
 
 Human-oriented detail: [`docs/safety.md`](../docs/safety.md).
+Path validation and no-remote-download rules: [`security.md`](security.md).
 
 ## Modes
 
