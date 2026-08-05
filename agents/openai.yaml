@@ -1,0 +1,5 @@
+# Codex / multi-tool skill metadata
+interface:
+  display_name: "Portage"
+  short_description: "Rehome agent bindings after a project folder rename or move"
+  default_prompt: "Portage this project path to the new location. Dry-run first unless I said apply."
