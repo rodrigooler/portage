@@ -1,11 +1,10 @@
 # Portage
 
-[![skills.sh](https://skills.sh/b/rodrigooler/portage)](https://skills.sh/rodrigooler/portage)
+[skills.sh/rodrigooler/portage](https://skills.sh/rodrigooler/portage)
 
 When you rename or move a project folder, coding agents keep pointing at the old path. Session history, trust lists, and local indexes do not follow the `mv`. Portage finds those bindings and rehomes them.
 
-Directory listing: [skills.sh/rodrigooler/portage](https://skills.sh/rodrigooler/portage)
-
+The official install-count badge (`https://skills.sh/b/owner/repo`) only renders after skills.sh has public install telemetry. Right now the package is listed with **0 installs**, so that endpoint returns an SVG saying "resource not found". Prefer the link above until counts show up.
 ## Install (recommended)
 
 Uses the [Vercel skills CLI](https://skills.sh) (`npx skills`). Global install (`-g`) puts the skill in your user agent dirs so every project can call `/portage`.
